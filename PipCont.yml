@@ -2,7 +2,7 @@ resources:
   pipelines:
    - pipeline: Test2
      source: Test2
-     project: oct23
+     project: oct24
      trigger: true
   containers:
   - container: ACRResourceLatest
