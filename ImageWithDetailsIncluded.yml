@@ -1,0 +1,38 @@
+resources:
+  pipelines:
+   - pipeline: Test2
+     source: Test2
+  containers:
+  - container: ACRResourceLatest
+    type: ACR
+    azureSubscription: ARM_Manual
+    resourceGroup: RMDev
+    registry: abhisheaAcr
+    repository: conrepo11
+    
+  - container: ACRResourceLatest2
+    type: ACR
+    azureSubscription: ARMM
+    resourceGroup: RMINT
+    registry: ansheno
+    repository: containerrepo
+
+stages:
+  - stage: stage1
+    jobs:
+    - job: download_specific_artifact1
+      displayName: download specific artifact1
+      pool:
+        name: Default
+      # steps:
+      #   - task: PowerShell@2
+      #     inputs:
+      #       targetType: 'inline'
+      #       script: |
+      #         Write-Host $(resources.container.ACRResourceLatest.type)
+      #         Write-Host $(resources.container.ACRResourceLatest.registry)
+      #         Write-Host $(resources.container.ACRResourceLatest.repository)
+      #         Write-Host $(resources.container.ACRResourceLatest.tag)
+      #         Write-Host $(resources.container.ACRResourceLatest.digest)
+      #         Write-Host $(resources.container.ACRResourceLatest.location)
+
