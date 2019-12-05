@@ -14,10 +14,10 @@ resources:
   #   repository: testimage:56
   - container: ACRResourceLatest
     type: ACR
-    azureSubscription: DockerConnection
+    azureSubscription: ARM_Automatic
     resourceGroup: ansheno
     registry: ansheno
-    repository: ajinkyadockertest
+    repository: ansheno
 
 stages:
   - stage: stage1
